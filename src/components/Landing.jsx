@@ -14,7 +14,7 @@ const Landing = () => {
                         <button className='btn'>Browse Books</button>
                     </Link>
                  </div>
-                 <figure clLinkssNLinkme='header__img--wrapper'>
+                 <figure className='header__img--wrapper'>
                     <img src={UndrawBooks} alt="" />
                  </figure>
             </div>
