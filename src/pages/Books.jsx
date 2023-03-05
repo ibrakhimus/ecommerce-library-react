@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "../components/Footer";
 import Book from "../components/ui/Book";
 
 export default function Books({books: initialBooks}) {
@@ -44,6 +45,8 @@ export default function Books({books: initialBooks}) {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
+    
   );
 }
