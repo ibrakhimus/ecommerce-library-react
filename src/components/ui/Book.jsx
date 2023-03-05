@@ -20,10 +20,10 @@ export default function Book({ book }) {
       }, 300);
     };
     return () => {
-      //When the component unmounts
+      // When the component unmounts 
       mountedRef.current = false;
-    }
-  })
+    };
+  }, [book.url]);
   
 
   return (
@@ -33,9 +33,9 @@ export default function Book({ book }) {
           <Link to={`/books/${book.id}`}>
             <figure className="book__img--wrapper">
               <img
-                src={img.src}
                 alt=""
                 className="book__img"
+                src={img.src}
               />
             </figure>
           </Link>
