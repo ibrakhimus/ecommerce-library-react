@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Cart({ cart }) {
+export default function Cart({ cart, changeQuantity }) {
   return (
     <div id="books__body">
       <main id="books__main">
@@ -27,9 +27,11 @@ export default function Cart({ cart }) {
                         />
                         <div className="cart__book--info">
                           <span className="cart__book--title">
-                          {book.title}
+                            {book.title}
                           </span>
-                          <span className="cart__book--price">${(book.salePrice || book.originalPrice).toFixed(2)}</span>
+                          <span className="cart__book--price">
+                            ${(book.salePrice || book.originalPrice).toFixed(2)}
+                          </span>
                           <button className="cart__book--remove">Remove</button>
                         </div>
                       </div>
@@ -39,9 +41,18 @@ export default function Cart({ cart }) {
                           min={0}
                           max={99}
                           className="cart__input"
+                          value={book.quantity}
+                          onChange={(event) =>
+                            changeQuantity(book, event.target.value)
+                          }
                         />
                       </div>
-                      <div className="cart__total">$10.00</div>
+                      <div className="cart__total">
+                        $
+                        {(
+                          (book.salePrice || book.originalPrice) * book.quantity
+                        ).toFixed(2)}
+                      </div>
                     </div>
                   );
                 })}
