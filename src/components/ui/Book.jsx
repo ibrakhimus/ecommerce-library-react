@@ -11,14 +11,12 @@ export default function Book({ book }) {
 
   useEffect(() => {
     const image = new Image();
-    image.src = book.url;
+    image.src = book.url
+
     image.onload = () => {
-      setTimeout(() => {
-        if (mountedRef.current) {
-          setImg(image);
-        }
-      }, 300);
+      setImg(image);
     };
+    
     return () => {
       // When the component unmounts 
       mountedRef.current = false;
