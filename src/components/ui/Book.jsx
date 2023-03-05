@@ -14,13 +14,15 @@ export default function Book({ book }) {
     image.src = book.url
 
     image.onload = () => {
-      setImg(image);
+      setTimeout(() => {
+          setImg(image);
+      }, 300)
     };
-    
+
     return () => {
       // When the component unmounts 
       mountedRef.current = false;
-    };
+    }
   }, [book.url]);
   
 
